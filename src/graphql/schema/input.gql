@@ -1,0 +1,37 @@
+input PaginationInput {
+    page: Int
+    limit: Int
+}
+
+#USER
+input RegisterInput {
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
+}
+
+input LoginInput {
+    email: String!
+    password: String!
+}
+
+input ForgotPasswordInput {
+    email: String!
+}
+
+input ResetPasswordInput {
+    token: String!
+    password: String!
+}
+
+input TokenInput {
+    token: String!
+}
+
+input UpdateUserInput {
+    firstName: String
+    lastName: String
+    picture: String
+    username: String
+}

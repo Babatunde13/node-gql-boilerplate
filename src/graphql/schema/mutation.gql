@@ -1,0 +1,11 @@
+type Mutation {
+    #USER
+    register(input: RegisterInput!): AuthOutput!
+    login(input: LoginInput!): AuthOutput!
+    refreshAccessToken(input: TokenInput!): AuthOutput!
+    forgotPassword(input: ForgotPasswordInput!): Boolean!
+    resetPassword(input: ResetPasswordInput!): Boolean!
+    verifyResetPassword(input: TokenInput!): Boolean!
+    verifyAccount(input: TokenInput!): Boolean!
+    updateUser(input: UpdateUserInput!): User!
+}

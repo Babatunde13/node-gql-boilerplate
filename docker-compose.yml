@@ -1,0 +1,41 @@
+networks:
+  node-gql-boilerplate:
+    driver: bridge
+
+services:
+  node-gql-boilerplate:
+    build:
+      context: .
+      target: build-stage
+    environment:
+      TEST_DATABASE_URL: mongodb://mongo:27017/node-gql-boilerplate-test
+      DATABASE_URL: mongodb://mongo:27017/node-gql-boilerplate
+      PORT: 5509
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      - redis
+      - mongo
+    networks:
+      - node-gql-boilerplate
+    ports:
+      - '5509:5509'
+
+  redis:
+    image: redis
+    container_name: redis
+    volumes:
+      - ./data:/data
+    ports:
+      - '6379:6379'
+    networks:
+      - node-gql-boilerplate
+  
+  mongo:
+    image: mongo
+    container_name: mongo
+    volumes:
+      - ./data:/data
+    ports:
+      - 27017:27017
+    networks:
+      - node-gql-boilerplate

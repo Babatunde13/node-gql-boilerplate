@@ -1,0 +1,32 @@
+type Pagination {
+    total: Int!
+    hasNext: Boolean!
+}
+
+#User
+type User {
+    _id: ID!
+    email: String!
+    username: String!
+    firstName: String!
+    lastName: String!
+    picture: String
+    verified: Boolean!
+    created: String!
+    updated: String!
+}
+
+type Token {
+    token: String!
+    expires: String!
+}
+
+type Tokens {
+    accessToken: Token!
+    refreshToken: Token!
+}
+
+type AuthOutput {
+    user: User
+    tokens: Tokens
+}

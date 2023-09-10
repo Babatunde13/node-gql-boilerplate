@@ -1,0 +1,10 @@
+{
+    "liveServer.settings.port": 5501,
+    "javascript.preferences.importModuleSpecifier": "relative",
+    "search.exclude": {
+        "**/dist": true,
+        "**/build": true
+    },
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single"
+}
